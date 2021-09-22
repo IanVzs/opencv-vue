@@ -73,6 +73,7 @@ export default {
       let faces = new this.$cv.RectVector()
       let eyes = new this.$cv.RectVector()
       let msize = new this.$cv.Size(0,0)
+      // 框选
       this.faceClass.detectMultiScale(gray, faces, 1.1, 3,0, msize, msize)
       for (let i=0;i<faces.size();i++) {
         let roiGray = gray.roi(faces.get(i))
@@ -81,6 +82,7 @@ export default {
         let point2 = new this.$cv.Point(faces.get(i).x + faces.get(i).width,
                               faces.get(i).y + faces.get(i).height);
         this.$cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
+        // 框选眼镜
         this.eyeClass.detectMultiScale(roiGray, eyes);
         for (let j = 0; j < eyes.size(); ++j) {
           let point1 = new this.$cv.Point(eyes.get(j).x, eyes.get(j).y);
