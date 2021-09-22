@@ -8,7 +8,7 @@
     <div>
       <canvas id="srcimg" ref="srcimg" class="imgcanvas"></canvas>
       <canvas id="dstimg" ref="dstimg" class="imgcanvas"></canvas>
-      <img src="@/assets/zoey-pic.jpg" ref="img" class="img"/>
+      <img src="@/assets/lena_std.png" ref="img" class="img"/>
     </div>
   </div>
 </template>
